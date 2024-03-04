@@ -14,6 +14,7 @@ public class KockaDobas {
     static Random rnd = new Random();
     
     public static void main(String[] args) {
+        //bekérés
         System.out.println("Dobások mennyisége:");
         int mennyiseg = sc.nextInt();
         int[] dobasok = {0,0,0,0, 0,0,0,0, 0,0,0};
@@ -21,12 +22,14 @@ public class KockaDobas {
             int szam = rnd.nextInt(2, 13);
             dobasok[szam-2]++;
         }
+        //Szélsőérték keresés
         int legnagyobb = 0;
         for (int i = 1; i < dobasok.length; i++) {
             if (dobasok[i] > dobasok[legnagyobb]){
                 legnagyobb = i;
             }
         }
+        //kiíratás
         int MAX_CSILLAG = 40;
         for (int i = 0; i < dobasok.length; i++) {
             if (dobasok[i]>0){
